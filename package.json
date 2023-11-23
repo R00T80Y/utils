@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "name": "utils",
+  "version": "0.0.0",
+  "main": "./src/index.ts",
+  "scripts": {
+    "license": "MIT",
+    "dev": "tsup --config ./tsup.config.dev.ts --watch --onSuccess=\"clear && echo \"----------------------------------------------------------------------------\"\" & nodemon ./build/index.mjs",
+    "test": "vitest --reporter verbose --logHeapUsage",
+    "build": "tsup --config ./tsup.config.prod.ts",
+    "lint": "tsc",
+    "clean": "rm -rf ./dist && rm -rf ./.temp && rm -rf ./build",
+    "ci": "pnpm clean && pnpm lint && pnpm test && pnpm build",
+    "update-deps": "pnpm update -i -r --latest"
+  },
+  "keywords": [],
+  "author": "nnu17ip1y <nnu17ip1y@yahoo.com> (https://github.com/R00T80Y)",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "query-string": "^8.1.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.1",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "eslint": "^8.54.0",
+    "husky": "^8.0.3",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.1.0",
+    "terser": "^5.24.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2",
+    "vitest": "^0.34.6"
+  },
+  "packageManager": "pnpm@7.15.0"
+}
