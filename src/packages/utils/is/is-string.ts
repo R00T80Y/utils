@@ -1,11 +1,16 @@
 /**
- * Это строка или нет?
+ * Возвращает, является ли значение строкой
  *
+ * @param {any} input unknown - Может принимать любое значение
+ * @returns {boolean} boolean
+ * @example
+ * ```ts
+ * const status = isString('Test') ? 'OK' : 'FAIL'; // 'OK'
+ * const strings = [1, 2, 3, 'text', false].filter(isString); // ['text']
+ * ```
  * @category Is
- * @example isString([1, undefined, NaN, 2, null, 3, 0])
- * @version 0.0.2
- * @see https://github.com/R00T80Y
+ * @version 0.0.3
  */
-export const isString = (input: any): input is string => {
+export function isString(input: unknown): input is string {
   return Object.prototype.toString.call(input) === '[object String]';
-};
+}
